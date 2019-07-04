@@ -28,7 +28,7 @@ export function fetchQuote () {
   return (dispatch) => {
     dispatch(requestQuote())
     return request
-      .get(`/`)
+      .get(`/getNorrisQuote`)
       .then(res => {
         dispatch(renderQuote(res.body))
       })
