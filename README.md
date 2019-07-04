@@ -32,12 +32,18 @@
 ## Database functions
 
 **Get All Quotes from Database**
+
+
+Returns quotes as strings inside an array
 ```
 function getAllQuotes(db = connection) {
     db('favourites').select()
 }
 ```
 **Insert FAVOURITE/SELECTED Quote to Database**
+
+
+Quote paramater expects a string
 ```
 function insertFavouriteQuote(quote, db = connection) {
     db('favourites').insert({quote: quote})
@@ -76,7 +82,14 @@ server.post('/', (req, res) => {
 ```
 RESPONSE >>>
 ```
+<<<<<<< HEAD
 [{quote: 'favouriteQuote', quote_id: ''}]
+=======
+{
+id: 1,
+favouriteQuote: 'favouriteQuote'
+}
+>>>>>>> c1bcc4bb64303b5547b82c4cc35f0c7003ca26dd
 ```
 
 
