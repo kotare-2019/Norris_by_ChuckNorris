@@ -62,7 +62,7 @@ server.get('/', (req, res) => {
 ```
 RESPONSE >>>
 ```
-['quoteOne', 'quoteTwo', 'quoteThree']
+[{quote: 'quoteOne', quote_id: ''}, {quote: 'quoteTwo', quote_id: ''}]
 ```
 
 **POST Request**
@@ -76,7 +76,7 @@ server.post('/', (req, res) => {
 ```
 RESPONSE >>>
 ```
-'favouriteQuote'
+[{quote: 'favouriteQuote', quote_id: ''}]
 ```
 
 
@@ -87,10 +87,10 @@ posting information from SaveGoodQuote component to database
 **Get Request**
 ```
 function getAllQuotesApi() {
-    return request.get()
+    <!-- return request.get()
         .then(response => {
             return response.body
-        })
+        }) -->
 }
 ```
 
@@ -169,6 +169,7 @@ const renderGoodQuoteList = () => {
 >Title and image of Chuck-Norrisy-Thing maybe him looking badass or using nunchucks
 
 > Button action [render GoodQuoteList]
+
 > Button action [render GoodQuote]
 
 

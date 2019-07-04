@@ -1,7 +1,7 @@
-import React from 'react'
+// import React from 'react'
 
-const Post = ({title}) => (
-  <div>{title}</div>
-)
+// const Post = ({title}) => (
+//   <div>{title}</div>
+// )
 
-export default Post
+// export default Post

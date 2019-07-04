@@ -1,11 +1,11 @@
 import {combineReducers} from 'redux'
 
 import errorMessage from './error-message'
-import subreddits from './subreddits'
+import norrisQuote from './norrisQuote'
 import waiting from './waiting'
 
 export default combineReducers({
   errorMessage,
-  subreddits,
+  norrisQuote,
   waiting
 })
