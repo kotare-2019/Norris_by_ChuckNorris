@@ -1,38 +1,53 @@
 ## Redux Actions
 
 1. Get quote from external API
-action: {
-  type: GET_QUOTE,
-  currentQuote: 'str'
+```
+export const requestNorrisApi = () => {
+  return {
+    type: REQUEST_NORRIS_API
+    currentQuote: ''
+  }
 }
+```
 
 2. Post quote to internal DB / JSON
-action: {
+```
+const postQuoteToDatabase = () => {
   type: SAVE_QUOTE,
-  favorites: []
+  currentQuote: ''
 }
+```
+
 3. Render quote
-action: {
+```
+const renderQuote = () => {
   type: RENDER_QUOTE,
   currentquote: ''
 }
+```
 
 4. Render good quote list
-action: {
+```
+const renderFavouriteQuotesFromDatabase = () => {
   type: RENDER_FAVS,
   favourites: []
 }
+```
 
-8. Make goodQuoteVisible component visible
-action: {
+5. Make GooddQuote component visible
+```
+const renderGoodQuote = () => {
   type: GOOD_QUOTE_VIS,
   goodQuoteVisible: boolean
 }
+```
 
-9. Make quoteListVisible component visible
-action: {
+6. Make GoodQuoteList component visible
+```
+const renderGoodQuoteList = () => {
   type: QUOTE_LIST_VIS,
   quoteListVisible: boolean
 }
+```
 
 **Stretch**

@@ -7,5 +7,6 @@ Global State = {
   quoteListVisible: true,
   currentQuote: 'string',
   favourites: [],
+  favouriteQuote: '',
   blacklist: []
 }
