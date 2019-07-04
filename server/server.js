@@ -6,6 +6,7 @@ const chuckDbRoutes = require('./routes/chuckDbRoutes')
 const server = express()
 
 server.use(express.static(path.join(__dirname, '../public')))
+server.use(express.urlencoded({ extended: true }))
 
 server.use('/getNorrisQuote', chuckRoutes)
 server.use('/chuckDbRoutes', chuckDbRoutes)
