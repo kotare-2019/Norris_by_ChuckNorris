@@ -82,7 +82,10 @@ server.post('/', (req, res) => {
 ```
 RESPONSE >>>
 ```
-'favouriteQuote'
+{
+id: 1,
+favouriteQuote: 'favouriteQuote'
+}
 ```
 
 
