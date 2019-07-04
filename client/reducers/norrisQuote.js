@@ -1,9 +1,9 @@
-import {REQUEST_NORRIS_API} from '../actions'
+import {RENDER_QUOTE} from '../actions'
 
-function norrisQuote (state = [], action) {
+function norrisQuote (state = {}, action) {
   switch (action.type) {
-    case REQUEST_NORRIS_API:
-      return action.currentQuote //this value might change in the future
+    case RENDER_QUOTE:
+      return action.currentQuote
     default:
       return state
   }

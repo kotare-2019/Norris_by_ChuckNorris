@@ -4,23 +4,40 @@ import {fetchQuote} from '../actions'
 
 
 
-const NorrisQuote = ({children, dispatch, newQuote}) => (
-  <React.Fragment>
-    <section>
-      <div>
-        <button onClick={() => dispatch(fetchQuote())}>
-          Generate Quote!
-        </button>
-        {children}
-      </div>
-      {/* <p key={newQuote.id}>{newQuote.value}</p> */}
+
+class NorrisQuote extends React.Component {
+  constructor(props) {
+    super(props)
+
+  }
+
+
+  render() {
+    let props = this.props
+    console.log(this.props)
+    
+    return (
+      <React.Fragment>
+       <section>
+         <div>
+            <button onClick={() => props.dispatch(fetchQuote())}>
+              Generate Quote!
+            </button>
+            {props.children}
+            <p>{this.props.currentQuote && this.props.currentQuote.value}</p>
+          </div>
       </section>
-  </React.Fragment>
-)
+    </React.Fragment>
+    );
+  }
+}
+
+
 
 const mapStateToProps = (state) => {
+  console.log(state)
   return {
-    norrisQuote: state.norrisQuote
+    currentQuote: state.norrisQuote
   }
 }
 
