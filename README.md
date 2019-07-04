@@ -60,6 +60,10 @@ server.get('/', (req, res) => {
         })
 }) 
 ```
+RESPONSE >>>
+```
+['quoteOne', 'quoteTwo', 'quoteThree']
+```
 
 **POST Request**
 ```
@@ -70,6 +74,11 @@ server.post('/', (req, res) => {
         })
 })
 ```
+RESPONSE >>>
+```
+'favouriteQuote'
+```
+
 
 posting information from SaveGoodQuote component to database
 
