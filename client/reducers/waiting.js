@@ -1,14 +1,14 @@
 import {
   SHOW_ERROR,
-  REQUEST_POSTS,
-  RECEIVE_POSTS} from '../actions'
+  REQUEST_NORRIS_API,
+  RENDER_QUOTE} from '../actions'
 
 const waiting = (state = false, action) => {
   switch (action.type) {
-    case REQUEST_POSTS:
+    case REQUEST_NORRIS_API:
       return true
 
-    case RECEIVE_POSTS:
+    case RENDER_QUOTE:
       return false
 
     case SHOW_ERROR:

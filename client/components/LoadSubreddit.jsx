@@ -1,14 +1,14 @@
-import React from 'react'
-import {connect} from 'react-redux'
-import {fetchPosts} from '../actions'
+// import React from 'react'
+// import {connect} from 'react-redux'
+// import {fetchQuote} from '../actions'
 
-const LoadSubreddit = ({children, dispatch}) => (
-  <div>
-    <button onClick={() => dispatch(fetchPosts('newzealand'))}>
-      Fetch Posts
-    </button>
-    {children}
-  </div>
-)
+// const LoadQuote = ({children, dispatch}) => (
+//   <div>
+//     <button onClick={() => dispatch(fetchQuote())}>
+//       Fetch Posts
+//     </button>
+//     {children}
+//   </div>
+// )
 
-export default connect()(LoadSubreddit)
+// export default connect()(LoadQuote)

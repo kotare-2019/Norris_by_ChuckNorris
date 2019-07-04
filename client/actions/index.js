@@ -1,19 +1,19 @@
 import request from 'superagent'
 
 export const SHOW_ERROR = 'SHOW_ERROR'
-export const RECEIVE_POSTS = 'RECEIVE_POSTS'
-export const REQUEST_POSTS = 'REQUEST_POSTS'
+export const RENDER_QUOTE = 'RENDER_QUOTE'
+export const REQUEST_NORRIS_API = 'REQUEST_NORRIS_API'
 
-export const requestPosts = () => {
+export const requestQuote = () => {
   return {
-    type: REQUEST_POSTS
+    type: REQUEST_NORRIS_API
   }
 }
 
-export const receivePosts = (posts) => {
+export const renderQuote = (quote) => {
   return {
-    type: RECEIVE_POSTS,
-    posts: posts.map(post => post.data)
+    type: RENDER_QUOTE,
+    currentQuote: quote
   }
 }
 
@@ -24,13 +24,13 @@ export const showError = (errorMessage) => {
   }
 }
 
-export function fetchPosts (subreddit) {
+export function fetchQuote () {
   return (dispatch) => {
-    dispatch(requestPosts())
+    dispatch(requestQuote())
     return request
-      .get(`/api/v1/reddit/subreddit/${subreddit}`)
+      .get(`/getNorrisQuote`)
       .then(res => {
-        dispatch(receivePosts(res.body))
+        dispatch(renderQuote(res.body))
       })
       .catch(err => {
         dispatch(showError(err.message))
