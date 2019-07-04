@@ -17,3 +17,12 @@
 6. *I would like to be able to black-list a bad quote so I don't have to see it again. Bad quotes are obviously not from the real Chuck Norris.*
 
 7. *I would like to see some places Chuck Norris has kicked ass on a map.*
+
+## Git Process
+
+1. Development branch
+2. Personal branches using the following convention;
+    *featureName-yourName*
+3. Add/Commit/Push to local branch before pulling from Development branch
+4. gitMaster will review code before merging pull requests
+5. gitMaster will delegate code reviews
