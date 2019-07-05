@@ -16,7 +16,7 @@ class LoadFavourites extends React.Component {
     return (
       <React.Fragment>
         <section className="faves-button">
-          <div>
+          <div id='wtf' className='list-container'>
             <button onClick={() => props.dispatch(fetchFavourites()) } >
               List Favourites!
             </button>
