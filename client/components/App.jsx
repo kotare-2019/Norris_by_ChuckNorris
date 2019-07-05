@@ -4,13 +4,14 @@ import ErrorMessage from './ErrorMessage'
 import WaitIndicator from './WaitIndicator'
 import QuoteGenerator from './QuoteGenerator';
 import Header from './Header'
+import LoadFavourites from './LoadFavourites';
 
 class App extends React.Component {
   constructor(props) {
     super(props)
 
   }
-  
+
   render() {
     return (
       <div className='app'>
@@ -19,10 +20,11 @@ class App extends React.Component {
         <QuoteGenerator>
           <WaitIndicator />
         </QuoteGenerator>
-      </div>  
+        <LoadFavourites />
+      </div>
     )
   }
 }
-  
+
 
 export default App

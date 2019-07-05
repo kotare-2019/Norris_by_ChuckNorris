@@ -25,9 +25,10 @@ export const requestFavourites = () => {
   }
 }
 
-export const renderFavourites = () => {
+export const renderFavourites = (list) => {
   return {
-    type: RENDER_FAVOURITES
+    type: RENDER_FAVOURITES,
+    favourites: list
   }
 }
 
