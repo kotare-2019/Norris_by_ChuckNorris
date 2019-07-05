@@ -18,13 +18,13 @@ class NorrisQuote extends React.Component {
     
     return (
       <React.Fragment>
-       <section>
-         <div>
-            <button onClick={() => props.dispatch(fetchQuote())}>
+       <section className="quote-section">
+       {props.children}
+         <div className="quote-div">
+            <button className='generate-button' onClick={() => props.dispatch(fetchQuote())}>
               Generate Quote!
             </button>
-            {props.children}
-            <p>{this.props.currentQuote && this.props.currentQuote.value}</p>
+            <p className="quote">{this.props.currentQuote && this.props.currentQuote.value}</p>
           </div>
       </section>
     </React.Fragment>

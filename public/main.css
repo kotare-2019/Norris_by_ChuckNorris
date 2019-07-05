@@ -1,10 +1,78 @@
+html {
+  margin: 0;
+}
+
+body {
+  height: 100%;
+  min-width: 100%;
+  margin: 0;
+  font-family: 'Barriecito', cursive;
+}
+
 .error {
   color: red;
   font-weight: bold;
 }
 
 .wait-indicator {
-  position: absolute;
+  z-index: 2;
+  position: relative;
   margin-left: 5px;
-  width: 20px;
+  width: 1350px;
+}
+
+header{
+  text-align: center;
+  height: 200px;;
+  min-width: 100%;
+  background-color: cornflowerblue;
+}
+
+.chuck-header{
+  margin: 0 0 0 0;
+  font-size: 8rem;
+}
+
+.chuck-o {
+  margin-top: 30px;
+  height: 120px;
+}
+
+.quote-section {
+  width: 100%;
+  height: 10em;
+  text-align: center;
+}
+
+.quote-div {
+  margin: auto;
+  height: 70%;
+  width: 50%;
+}
+
+.quote {
+  z-index: 1;
+  font-size: 5rem;
+  letter-spacing: 0;
+}
+
+button {
+  z-index: 1;
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid #FFFFFF;
+  margin: auto;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #FFFFFF;
+  background-color: #000000;
+  text-align: center;
+  transition: all 0.3s;
+}
+button:hover {
+  color: #000000;
+  background-color: #FFFFFF;
 }
