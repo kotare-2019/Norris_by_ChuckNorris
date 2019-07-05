@@ -5,6 +5,7 @@ export const RENDER_QUOTE = 'RENDER_QUOTE'
 export const REQUEST_NORRIS_API = 'REQUEST_NORRIS_API'
 export const REQUEST_FAVOURITES = 'REQUEST_FAVOURITES'
 export const RENDER_FAVOURITES = 'RENDER_FAVOURITES'
+export const SAVE_QUOTE = 'SAVE_QUOTE'
 
 export const requestQuote = () => {
   return {
@@ -15,6 +16,13 @@ export const requestQuote = () => {
 export const renderQuote = (quote) => {
   return {
     type: RENDER_QUOTE,
+    currentQuote: quote
+  }
+}
+
+const postQuoteToDatabase = (quote) => {
+  return {
+    type: SAVE_QUOTE,
     currentQuote: quote
   }
 }
@@ -56,7 +64,7 @@ export function fetchQuote() {
 
 export function fetchFavourites() {
   return (dispatch) => {
-    dispatch(requestFavourites())
+    dispatch(postQuoteToDatabase())
     return request
       .get('/chuckDbRoutes/favourites')
       .then(res => {
@@ -67,3 +75,18 @@ export function fetchFavourites() {
       })
   }
 }
+
+export function postQuoteAPI(quote) {
+  return (dispatch) => {
+    request.post('chuckDbRoutes/insertFavourite')
+      .send(quote)
+      .then(res => {
+        dispatch(fetchFavourites())
+      })
+      .catch(err => {
+        dispatch(showError(err.message))
+      })
+  }
+}
+
+    // dispatch(postQuoteToDatabase(quote))
