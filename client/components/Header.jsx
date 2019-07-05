@@ -9,7 +9,11 @@ class Header extends React.Component {
     
     render() { 
         return (
-            <h1>This is the header!</h1>
+            <React.Fragment>
+                <header>
+                   <h1 className='chuck-header'> <img src='/norris.png' className='norris-face'/>CHUCK N<img className='chuck-o' src='/approved.png' />RRIS QU<img  className='chuck-o' src='/approved.png' />TES<img src='/norris.png' className='norris-face'/> </h1>
+                </header>
+            </React.Fragment>
         );
     }
 }

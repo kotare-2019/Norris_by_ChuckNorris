@@ -14,7 +14,7 @@ class Post extends React.Component {
 
     return (
       <React.Fragment>
-        <section>
+        <section className='awesome-quote-button'>
           <div>
             <button onClick={() => props.dispatch(postQuoteAPI(props.currentQuote))}>
               Post Awesome Quote!
