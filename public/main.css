@@ -19,13 +19,21 @@ body {
   position: relative;
   margin-left: 5px;
   width: 1350px;
+  border: solid 2px black;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 300px 200px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 300px 200px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 300px 200px rgba(0,0,0,0.75);
 }
 
 header{
   text-align: center;
   height: 200px;;
   min-width: 100%;
-  background-color: cornflowerblue;
+  background-color: #BD0926;
+  -webkit-box-shadow: 0px 0px 19px 6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 19px 6px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 19px 6px rgba(0,0,0,0.75);
 }
 
 .chuck-header{
@@ -35,7 +43,7 @@ header{
 
 .chuck-o {
   margin-top: 30px;
-  height: 120px;
+  height: 100px;
 }
 
 .quote-section {
@@ -61,7 +69,7 @@ button {
   display: inline-block;
   padding: 0.35em 1.2em;
   border: 0.1em solid #FFFFFF;
-  margin: auto;
+  margin: 50px auto 0 auto;
   border-radius: 0.12em;
   box-sizing: border-box;
   text-decoration: none;
@@ -75,4 +83,16 @@ button {
 button:hover {
   color: #000000;
   background-color: #FFFFFF;
+}
+
+.faves-button {
+  margin: 0 0 0 25px;
+}
+
+.norris-face {
+  height: 100px;
+}
+
+ul {
+  font-size: 1.25rem;
 }

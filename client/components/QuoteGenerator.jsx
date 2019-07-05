@@ -14,7 +14,6 @@ class NorrisQuote extends React.Component {
 
   render() {
     let props = this.props
-    console.log(this.props)
     
     return (
       <React.Fragment>
@@ -35,7 +34,6 @@ class NorrisQuote extends React.Component {
 
 
 const mapStateToProps = (state) => {
-  console.log(state)
   return {
     currentQuote: state.norrisQuote
   }

@@ -5,22 +5,24 @@ import { fetchFavourites } from '../actions'
 class LoadFavourites extends React.Component {
   constructor(props) {
     super(props)
+
   }
+
+
 
   render() {
     let props = this.props
-    console.log(this.props)
 
     return (
       <React.Fragment>
-        <section>
+        <section className="faves-button">
           <div>
-            <button onClick={() => props.dispatch(fetchFavourites())}>
+            <button onClick={() => props.dispatch(fetchFavourites()) } >
               List Favourites!
             </button>
             <ul>{this.props.favourites && this.props.favourites.map(e => {
               return (
-                <li>{e.quote}</li>
+                <li key={e.id}>{e.quote}</li>
               )
             })}</ul>
           </div>
@@ -31,7 +33,6 @@ class LoadFavourites extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state)
   return {
     favourites: state.norrisFavourites
   }

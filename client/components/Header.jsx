@@ -11,7 +11,7 @@ class Header extends React.Component {
         return (
             <React.Fragment>
                 <header>
-                    <h1 className='chuck-header'>CHUCK N<img className='chuck-o' src='/o.gif' />RRIS QU<img  className='chuck-o' src='/o.gif' />TES</h1>
+                   <h1 className='chuck-header'> <img src='/norris.png' className='norris-face'/>CHUCK N<img className='chuck-o' src='/approved.png' />RRIS QU<img  className='chuck-o' src='/approved.png' />TES<img src='/norris.png' className='norris-face'/> </h1>
                 </header>
             </React.Fragment>
         );
