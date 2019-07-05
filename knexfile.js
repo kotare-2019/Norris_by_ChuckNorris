@@ -30,7 +30,7 @@ module.exports = {
       max: 10
     },
     migrations: {
-      tableName: 'favourites' //might be table-name
+      tableName: 'knex_migrations' //might be table-name
     }
   }
 
