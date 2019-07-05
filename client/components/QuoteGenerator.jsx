@@ -1,6 +1,6 @@
 import React from 'react'
-import {connect} from 'react-redux'
-import {fetchQuote} from '../actions'
+import { connect } from 'react-redux'
+import { fetchQuote } from '../actions'
 
 
 
@@ -18,15 +18,15 @@ class NorrisQuote extends React.Component {
     return (
       <React.Fragment>
        <section className="quote-section">
-       {props.children}
+        {props.children}
          <div className="quote-div">
             <button className='generate-button' onClick={() => props.dispatch(fetchQuote())}>
               Generate Quote!
             </button>
             <p className="quote">{this.props.currentQuote && this.props.currentQuote.value}</p>
           </div>
-      </section>
-    </React.Fragment>
+        </section>
+      </React.Fragment>
     );
   }
 }
