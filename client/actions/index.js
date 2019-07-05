@@ -3,6 +3,8 @@ import request from 'superagent'
 export const SHOW_ERROR = 'SHOW_ERROR'
 export const RENDER_QUOTE = 'RENDER_QUOTE'
 export const REQUEST_NORRIS_API = 'REQUEST_NORRIS_API'
+export const REQUEST_FAVOURITES = 'REQUEST_FAVOURITES'
+export const RENDER_FAVOURITES = 'RENDER_FAVOURITES'
 
 export const requestQuote = () => {
   return {
@@ -17,6 +19,20 @@ export const renderQuote = (quote) => {
   }
 }
 
+export const requestFavourites = () => {
+  return {
+    type: REQUEST_FAVOURITES
+  }
+}
+
+export const renderFavourites = (list) => {
+  return {
+    type: RENDER_FAVOURITES,
+    favourites: list
+  }
+}
+
+
 export const showError = (errorMessage) => {
   return {
     type: SHOW_ERROR,
@@ -24,13 +40,27 @@ export const showError = (errorMessage) => {
   }
 }
 
-export function fetchQuote () {
+export function fetchQuote() {
   return (dispatch) => {
     dispatch(requestQuote())
     return request
       .get(`/getNorrisQuote`)
       .then(res => {
         dispatch(renderQuote(res.body))
+      })
+      .catch(err => {
+        dispatch(showError(err.message))
+      })
+  }
+}
+
+export function fetchFavourites() {
+  return (dispatch) => {
+    dispatch(requestFavourites())
+    return request
+      .get('/chuckDbRoutes/favourites')
+      .then(res => {
+        dispatch(renderFavourites(res.body))
       })
       .catch(err => {
         dispatch(showError(err.message))
