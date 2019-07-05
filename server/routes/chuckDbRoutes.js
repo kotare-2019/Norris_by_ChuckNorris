@@ -19,7 +19,6 @@ router.post('/insertFavourite', (req, res) => {
     id: req.body.id,
     value: req.body.value
   }
-  console.log(req.body)
   db.insertFavouriteQuote(newFav)
     .then(favourite => { res.send(favourite) })
     .catch(err => {

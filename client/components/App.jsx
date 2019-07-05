@@ -5,6 +5,7 @@ import WaitIndicator from './WaitIndicator'
 import QuoteGenerator from './QuoteGenerator';
 import Header from './Header'
 import LoadFavourites from './LoadFavourites';
+import Post from './Post'
 
 class App extends React.Component {
   constructor(props) {
@@ -20,6 +21,7 @@ class App extends React.Component {
         <QuoteGenerator>
           <WaitIndicator />
         </QuoteGenerator>
+        <Post />
         <LoadFavourites />
       </div>
     )

@@ -9,7 +9,6 @@ class LoadFavourites extends React.Component {
 
   render() {
     let props = this.props
-    console.log(this.props)
 
     return (
       <React.Fragment>
@@ -31,7 +30,6 @@ class LoadFavourites extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state)
   return {
     favourites: state.norrisFavourites
   }

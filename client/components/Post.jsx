@@ -11,13 +11,12 @@ class Post extends React.Component {
 
   render() {
     let props = this.props
-    console.log(this.props)
 
     return (
       <React.Fragment>
         <section>
           <div>
-            <button onClick={() => props.dispatch(postQuoteAPI(value))}>
+            <button onClick={() => props.dispatch(postQuoteAPI(props.currentQuote))}>
               Post Awesome Quote!
             </button>
           </div>
@@ -30,7 +29,6 @@ class Post extends React.Component {
 
 
 const mapStateToProps = (state) => {
-  console.log(state)
   return {
     currentQuote: state.norrisQuote
   }

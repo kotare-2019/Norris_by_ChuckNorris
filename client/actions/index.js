@@ -76,16 +76,17 @@ export function fetchFavourites() {
   }
 }
 
-export function postQuoteAPI() {
+export function postQuoteAPI(quote) {
   return (dispatch) => {
-    dispatch(postQuoteToDatabase())
-    return request
-      .get('/chuckDbRoutes/insertFavourite')
+    request.post('chuckDbRoutes/insertFavourite')
+      .send(quote)
       .then(res => {
-        dispatch(renderQuote(res.body))
+        dispatch(fetchFavourites())
       })
       .catch(err => {
         dispatch(showError(err.message))
       })
   }
 }
+
+    // dispatch(postQuoteToDatabase(quote))
