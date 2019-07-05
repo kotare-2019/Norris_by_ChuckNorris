@@ -1,2 +1,5 @@
 node_modules
 bundle*
+dev.sqlite3
+package.json
+package-lock.json
