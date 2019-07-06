@@ -1,39 +1,37 @@
-// import React from 'react'
-// import { connect } from 'react-redux'
-// import { postQuoteAPI } from '../actions'
+import React from 'react'
+import { connect } from 'react-redux'
+import { postBlacklistAPI } from '../actions'
 
-// class Post extends React.Component {
-//   constructor(props) {
-//     super(props)
+class BlackList extends React.Component {
+  constructor(props) {
+    super(props)
 
-//   }
-
-
-//   render() {
-//     let props = this.props
-
-//     return (
-//       <React.Fragment>
-//         <section className='awesome-quote-button'>
-//           <div>
-//             <button onClick={() => props.dispatch(postQuoteAPI(props.currentQuote))}>
-//               Post Awesome Quote!
-//             </button>
-//           </div>
-//         </section>
-//       </React.Fragment>
-//     );
-//   }
-// }
+  }
 
 
+  render() {
+    let props = this.props
 
-// const mapStateToProps = (state) => {
-//   return {
-//     currentQuote: state.norrisQuote
-//   }
-// }
+    return (
+      <React.Fragment>
+        <section className='awesome-quote-button'>
+          <div>
+            <button onClick={() => props.dispatch(postBlacklistAPI(props.currentQuote))}>
+              Blacklist Not-Awesome Quote!
+            </button>
+          </div>
+        </section>
+      </React.Fragment>
+    );
+  }
+}
 
-// export default connect(
-//   mapStateToProps
-// )(Post)
+const mapStateToProps = (state) => {
+  return {
+    currentQuote: state.norrisQuote
+  }
+}
+
+export default connect(
+  mapStateToProps
+)(BlackList)

@@ -6,6 +6,8 @@ export const REQUEST_NORRIS_API = 'REQUEST_NORRIS_API'
 export const REQUEST_FAVOURITES = 'REQUEST_FAVOURITES'
 export const RENDER_FAVOURITES = 'RENDER_FAVOURITES'
 export const SAVE_QUOTE = 'SAVE_QUOTE'
+export const REQUEST_BLACKLIST = 'REQUEST_BLACKLIST'
+export const BLACKLIST_QUOTE = 'BLACKLIST_QUOTE'
 
 export const requestQuote = () => {
   return {
@@ -27,9 +29,22 @@ const postQuoteToDatabase = (quote) => {
   }
 }
 
+const postBlacklistToDatabase = (quote) => {
+  return {
+    type: BLACKLIST_QUOTE,
+    currentQuote: quote
+  }
+}
+
 export const requestFavourites = () => {
   return {
     type: REQUEST_FAVOURITES
+  }
+}
+
+export const requestBlacklist = () => {
+  return {
+    type: REQUEST_BLACKLIST
   }
 }
 
@@ -39,7 +54,6 @@ export const renderFavourites = (list) => {
     favourites: list
   }
 }
-
 
 export const showError = (errorMessage) => {
   return {
@@ -64,7 +78,7 @@ export function fetchQuote() {
 
 export function fetchFavourites() {
   return (dispatch) => {
-    dispatch(postQuoteToDatabase())
+    dispatch(requestFavourites())
     return request
       .get('/chuckDbRoutes/favourites')
       .then(res => {
@@ -89,3 +103,29 @@ export function postQuoteAPI(quote) {
   }
 }
 
+export function fetchBlacklist() {
+  return (dispatch) => {
+    dispatch(requestBlacklist())
+    return request
+      .get('/chuckDbRoutes/blacklist')
+      // .then(res => {
+      //   dispatch(renderFavourites(res.body))
+      // })
+      .catch(err => {
+        dispatch(showError(err.message))
+      })
+  }
+}
+
+export function postBlacklistAPI(quote) {
+  return (dispatch) => {
+    request.post('chuckDbRoutes/insertBlacklist')
+      .send(quote)
+      .then(res => {
+        dispatch(fetchBlacklist())
+      })
+      .catch(err => {
+        dispatch(showError(err.message))
+      })
+  }
+}
