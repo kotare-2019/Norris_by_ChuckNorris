@@ -89,4 +89,3 @@ export function postQuoteAPI(quote) {
   }
 }
 
-    // dispatch(postQuoteToDatabase(quote))
