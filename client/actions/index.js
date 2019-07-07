@@ -131,5 +131,5 @@ export function postBlacklistAPI(quote) {
 }
 
 export function checkBlacklist(quote, blacklist) {
-  return blacklist.find(e => e === quote.id) ? fetchQuote() : quote 
+  return !blacklist.find(e => e.id === quote.id) ? quote : fetchQuote()
 }
