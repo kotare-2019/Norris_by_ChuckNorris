@@ -66,7 +66,7 @@ export function fetchQuote() {
   return (dispatch) => {
     dispatch(requestQuote())
     return request
-      .get(`/getNorrisQuote`)
+      .get('/getNorrisQuote')
       .then(res => {
         dispatch(renderQuote(res.body))
       })
@@ -128,4 +128,8 @@ export function postBlacklistAPI(quote) {
         dispatch(showError(err.message))
       })
   }
+}
+
+export function checkBlacklist(quote, blacklist) {
+  return blacklist.find(e => e === quote.id) ? fetchQuote() : quote 
 }
