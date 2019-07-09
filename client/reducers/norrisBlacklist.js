@@ -1,4 +1,4 @@
-// import { RENDER_FAVOURITES } from '../actions'
+import { REQUEST_BLACKLIST } from '../actions'
 
 function norrisBlacklist(state = [], action) {
   switch (action.type) {

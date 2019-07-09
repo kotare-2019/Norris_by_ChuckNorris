@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { postBlacklistAPI } from '../actions'
+import norrisBlacklist from '../reducers/norrisBlacklist';
 
 class BlackList extends React.Component {
   constructor(props) {
@@ -8,6 +9,9 @@ class BlackList extends React.Component {
 
   }
 
+  componentDidMount() {
+    this.props.dispatch(norrisBlacklist())
+  }
 
   render() {
     let props = this.props
@@ -28,10 +32,9 @@ class BlackList extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    currentQuote: state.norrisQuote
+    currentQuote: state.norrisQuote,
+    norrisBlacklist: state.norrisBlacklist
   }
 }
 
-export default connect(
-  mapStateToProps
-)(BlackList)
+export default connect(mapStateToProps)(BlackList)

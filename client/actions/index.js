@@ -108,9 +108,9 @@ export function fetchBlacklist() {
     dispatch(requestBlacklist())
     return request
       .get('/chuckDbRoutes/blacklist')
-      // .then(res => {
-      //   dispatch(renderFavourites(res.body))
-      // })
+      .then(res => {
+        dispatch(norrisBlacklist(res.body))
+      })
       .catch(err => {
         dispatch(showError(err.message))
       })
