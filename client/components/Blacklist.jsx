@@ -10,7 +10,7 @@ class BlackList extends React.Component {
   }
 
   componentDidMount() {
-    this.props.dispatch(norrisBlacklist())
+    this.props.dispatch(fetchBlacklist())
   }
 
   render() {

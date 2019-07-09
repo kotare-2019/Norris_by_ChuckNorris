@@ -29,22 +29,15 @@ const postQuoteToDatabase = (quote) => {
   }
 }
 
-const postBlacklistToDatabase = (quote) => {
-  return {
-    type: BLACKLIST_QUOTE,
-    currentQuote: quote
-  }
-}
-
 export const requestFavourites = () => {
   return {
     type: REQUEST_FAVOURITES
   }
 }
 
-export const requestBlacklist = () => {
+export const setBlacklist = () => {
   return {
-    type: REQUEST_BLACKLIST
+    type: SET_BLACKLIST
   }
 }
 
@@ -61,6 +54,8 @@ export const showError = (errorMessage) => {
     errorMessage: errorMessage
   }
 }
+
+
 
 export function fetchQuote() {
   return (dispatch) => {
@@ -108,28 +103,28 @@ export function fetchBlacklist() {
     dispatch(requestBlacklist())
     return request
       .get('/chuckDbRoutes/blacklist')
-      .then(res => {
-        dispatch(norrisBlacklist(res.body))
-      })
+      .then(res => res.body)
+      .then(blacklist => {
+        dispatch(setBlacklist(blacklist))
       .catch(err => {
-        dispatch(showError(err.message))
-      })
-  }
+            dispatch(showError(err.message))
+          })
+      }
 }
 
-export function postBlacklistAPI(quote) {
-  return (dispatch) => {
-    request.post('chuckDbRoutes/insertBlacklist')
-      .send(quote)
-      .then(res => {
-        dispatch(fetchBlacklist())
-      })
-      .catch(err => {
-        dispatch(showError(err.message))
-      })
+  export function postBlacklistAPI(quote) {
+    return (dispatch) => {
+      request.post('chuckDbRoutes/insertBlacklist')
+        .send(quote)
+        .then(res => {
+          dispatch(fetchBlacklist())
+        })
+        .catch(err => {
+          dispatch(showError(err.message))
+        })
+    }
   }
-}
 
-export function checkBlacklist(quote, blacklist) {
-  return !blacklist.find(e => e.id === quote.id) ? quote : fetchQuote()
-}
+  export function checkBlacklist(quote, blacklist) {
+    return !blacklist.find(e => e.id === quote.id) ? quote : fetchQuote()
+  }
