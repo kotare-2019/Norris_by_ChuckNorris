@@ -1,8 +1,8 @@
-import { REQUEST_BLACKLIST } from '../actions'
+import { SET_BLACKLIST } from '../actions'
 
 function norrisBlacklist(state = [], action) {
   switch (action.type) {
-    case REQUEST_BLACKLIST:
+    case SET_BLACKLIST:
       return action.norrisBlacklist
     default:
       return state

@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { postBlacklistAPI } from '../actions'
-import norrisBlacklist from '../reducers/norrisBlacklist';
+import fetchBlacklist from '../reducers/norrisBlacklist';
 
 class BlackList extends React.Component {
   constructor(props) {
