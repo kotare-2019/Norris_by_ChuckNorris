@@ -35,6 +35,12 @@ export const requestFavourites = () => {
   }
 }
 
+export const requestBlacklist = () => {
+  return {
+    type: REQUEST_BLACKLIST
+  }
+}
+
 export const setBlacklist = (norrisBlacklist) => {
   return {
     type: SET_BLACKLIST,
