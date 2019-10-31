@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "knex": "^0.17.5",
+    "knex": "^0.20.1",
     "pg": "^4.0.8",
     "@babel/core": "^7.4.5",
     "@babel/plugin-proposal-class-properties": "^7.4.4",
